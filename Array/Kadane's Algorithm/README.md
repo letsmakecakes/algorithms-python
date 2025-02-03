@@ -44,28 +44,6 @@ arr = [-2,1,-3,4,-1,2,1,-5,4]
 print(kadane(arr))  # Output: 6
 ```
 
-### C++ Code:
-```cpp
-#include <iostream>
-#include <vector>
-using namespace std;
-
-int kadane(vector<int>& arr) {
-    int max_current = arr[0], max_global = arr[0];
-    for (size_t i = 1; i < arr.size(); i++) {
-        max_current = max(arr[i], max_current + arr[i]);
-        max_global = max(max_global, max_current);
-    }
-    return max_global;
-}
-
-int main() {
-    vector<int> arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
-    cout << kadane(arr) << endl; // Output: 6
-    return 0;
-}
-```
-
 ## Complexity Analysis
 - **Time Complexity:** `O(n)` - Since we iterate through the array once.
 - **Space Complexity:** `O(1)` - No extra space is used apart from variables.
